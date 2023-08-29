@@ -1,7 +1,39 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @font-face {
+            font-family: 'Grafton';
+            src: url('ZTGrafton-Regular.ttf') format('ttf'),
+                 url('ZTGrafton-Regular.ttf') format('ttf');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            gap: 20px;
+            font-family: 'Grafton', sans-serif;
+            background-image: url("Hintergrundbild.jpg"); /* Hintergrundbild hinzugefügt */
+            background-size: cover; /* Damit das Bild den gesamten Bereich abdeckt */
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <h1>Willkommen im Hub zur Präsentation OZG 2.0 Aktueller Stand</h1>
+    <button onclick="window.location.href='https://www.bmi.bund.de/DE/themen/moderne-verwaltung/moderne-verwaltung-node.html'">BMI-Digitale-Verwaltung</button>
+    <button onclick="window.location.href='https://www.onlinezugangsgesetz.de/Webs/OZG/DE/grundlagen/info-ozg/paket-fuer-digitale-verwaltung/paket-fuer-digitale-verwaltung-node.html'">"OZG-2.0"</button>
+    <button onclick="window.location.href='https://dashboard.ozg-umsetzung.de/'">OZG-Fortschritt</button>
 </body>
 </html>

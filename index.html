@@ -37,15 +37,19 @@
 <body>
     <h1>Willkommen im Hub zur Präsentation OZG 2.0 Aktueller Stand</h1>
     <button onclick="openPDF()">OZG-GesetzesText</button>
-    <button onclick="window.location.href='https://www.bmi.bund.de/DE/themen/moderne-verwaltung/moderne-verwaltung-node.html'">BMI-Digitale-Verwaltung</button>
-    <button onclick="window.location.href='https://www.onlinezugangsgesetz.de/Webs/OZG/DE/grundlagen/info-ozg/paket-fuer-digitale-verwaltung/paket-fuer-digitale-verwaltung-node.html'">"OZG-2.0"</button>
-    <button onclick="window.location.href='https://dashboard.ozg-umsetzung.de/'">OZG-Umsetzungs-Dashboard</button>
+    <button onclick="openPDF2()">OZGÄndG-GesetzesText</button>
+    <button onclick="openLink('https://www.bmi.bund.de/DE/themen/moderne-verwaltung/moderne-verwaltung-node.html')">BMI-Digitale-Verwaltung</button>
+    <button onclick="openLink('https://www.onlinezugangsgesetz.de/Webs/OZG/DE/grundlagen/info-ozg/paket-fuer-digitale-verwaltung/paket-fuer-digitale-verwaltung-node.html')">"OZG-2.0"</button>
+    <button onclick="openLink('https://dashboard.ozg-umsetzung.de/')">OZG-Umsetzungsfortschritt</button>
     <button onclick="alert('Um diese Seite auf Ihrem Home-Bildschirm zu speichern, öffnen Sie das Menü Ihres Browsers und wählen Sie \'Zum Startbildschirm hinzufügen\'.')">Zum Home-Bildschirm hinzufügen</button>
 
     <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
     <script>
         function openLink(url) {
             window.open(url, '_blank');
+        }
+        function openPDF2() {
+            window.open('OZG - Gesetz zur Verbesserung des Onlinezugangs zu Verwaltungsleistungen.pdf', '_blank');
         }
         function openPDF() {
             window.open('OZG - Gesetz zur Verbesserung des Onlinezugangs zu Verwaltungsleistungen.pdf', '_blank');

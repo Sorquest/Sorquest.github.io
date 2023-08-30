@@ -36,6 +36,7 @@
 </head>
 <body>
     <h1>Willkommen im Hub zur Präsentation OZG 2.0 Aktueller Stand</h1>
+    <button onclick="openPDF()">OZG-GesetzesText</button>
     <button onclick="window.location.href='https://www.bmi.bund.de/DE/themen/moderne-verwaltung/moderne-verwaltung-node.html'">BMI-Digitale-Verwaltung</button>
     <button onclick="window.location.href='https://www.onlinezugangsgesetz.de/Webs/OZG/DE/grundlagen/info-ozg/paket-fuer-digitale-verwaltung/paket-fuer-digitale-verwaltung-node.html'">"OZG-2.0"</button>
     <button onclick="window.location.href='https://dashboard.ozg-umsetzung.de/'">OZG-Fortschritt</button>
@@ -47,17 +48,20 @@
     <script>
         var pdfViewer = document.getElementById('pdf-viewer');
 
-        pdfjsLib.getDocument('OZG - Gesetz zur Verbesserung des Onlinezugangs zu Verwaltungsleistungen.pdf').promise.then(function(pdf) {
-            pdf.getPage(1).then(function(page) {
-                var canvas = document.createElement('canvas');
-                var context = canvas.getContext('2d');
-                var viewport = page.getViewport({ scale: 1 });
-                canvas.width = viewport.width;
-                canvas.height = viewport.height;
-                page.render({ canvasContext: context, viewport: viewport });
-                pdfViewer.appendChild(canvas);
+        function openPDF() {
+            pdfjsLib.getDocument('OZG - Gesetz zur Verbesserung des Onlinezugangs zu Verwaltungsleistungen.pdf').promise.then(function(pdf) {
+                pdf.getPage(1).then(function(page) {
+                    var canvas = document.createElement('canvas');
+                    var context = canvas.getContext('2d');
+                    var viewport = page.getViewport({ scale: 1 });
+                    canvas.width = viewport.width;
+                    canvas.height = viewport.height;
+                    page.render({ canvasContext: context, viewport: viewport });
+                    pdfViewer.innerHTML = '';
+                    pdfViewer.appendChild(canvas);
+                });
             });
-        });
+        }
     </script>
 </body>
 </html>
